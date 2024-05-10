@@ -1,0 +1,208 @@
+body {
+  background-image: url("BackgroundFinal.jpg");
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+on the container's size */
+  background-size: cover;
+  /* Set a background color that will be displayed
+while the background image is loading */
+  background-color: #464646;
+}
+
+div {
+  /* border: 5px solid; */ /* used for to show the outlines of all the divs */
+
+  border-radius: 25px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.intro {
+  border-radius: 15px;
+  border: 5px solid #567d92;
+  background-color: #567d9254;
+  text-align: center;
+  padding: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 60px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  background-color: transparent;
+}
+
+p,
+ul,
+li,
+h1,
+h2 {
+  background-color: transparent;
+  text-align: center;
+  color: white;
+}
+
+/* This is the container responible for holding the timeline in it */
+.container {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  height: max-content;
+  gap: 60px;
+  padding: 70px;
+}
+
+/* START OF NEW CODE */
+
+
+/* This class holds the image/picutres and message for Shannon */
+.blue,
+.yellow {
+  min-width: 500px;
+  height: 500px;
+  border-radius: 15px;
+  overflow-y: hidden;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 10px 10px #0000005e;
+  transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* position: relative; */
+
+}
+
+
+/* How the images/videos are displayed when they aren't being hovered
+over, thing to note is that this only pertains to the images/videos 
+that are in this div !!! */
+.blue img,
+.yellow img,
+.blue video,
+.yellow video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: grayscale(1);
+  transition: 800ms; /* you changed this */
+  cursor: pointer;
+  position: relative;
+}
+
+/* Notice how before the hove, the color of image/videos are grey
+well what thi class does it it increses the size of the image and
+adds color */ 
+.blue:hover > img,
+.yellow:hover > img,
+.blue:hover > video,
+.yellow:hover > video {
+  filter: grayscale(0);
+  transform: scale(1.3);
+}
+
+
+
+.text-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  height: 90%;
+  width: 90%;
+  z-index: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: 800ms;
+}
+
+
+/* This fucking class, okay this is for the divs that whole what I want
+to actually say to Shannon. */
+.text-area {
+  
+  padding: 10px;
+  width: 95%;
+  color: #fff;
+  font-family:'Times New Roman', Times, serif;
+  z-index: 1;
+  font-size: 16px;
+  margin: 0 auto;
+  overflow-y: auto;
+  /* opacity: 0;
+  transition: 800ms; */
+}
+
+/* How images/videos are displayed in the text-area divs */
+.text-area img, .text-area video {
+  margin-top: 10px;
+  max-width: 50%;
+  max-height: 50%;
+  width: auto;
+  height: auto;
+}
+
+
+.blue:hover > .text-container,
+.yellow:hover > .text-container {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.text-container::before {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#0000007f, transparent, #0000006f);
+  z-index: -1;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.blue:hover .text-container::before,
+.yellow:hover .text-container::before {
+  transition-delay: 0.5s;
+  backdrop-filter: blur(10px);
+}
+
+/* END OF NEW CODE */
+
+.blue:hover,
+.yellow:hover {
+  transform: scale(1.2);
+  /* transition: transform 800ms ease ease-in-out; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transform: 0.4s;
+}
+
+.blue {
+  border: 5px solid #a9c6d3;
+  background-color: #a9c6d356;
+}
+
+.yellow {
+  border: 5px solid #b0a16b;
+  background-color: #b0a16b4c;
+}

@@ -1,0 +1,87 @@
+
+
+div {
+  border: 5px solid;
+  border-radius: 25px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: transparent;
+
+  /* text-align: center; */
+} 
+
+h1,
+h2 {
+  text-align: center;
+  background-color: transparent;
+}
+
+p,
+ul,
+li {
+  background-color: transparent;
+}
+
+video,
+img {
+  border-radius: 25px;
+  border: 5px solid white;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.intro p{
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  height: max-content;
+  gap: 60px;
+  padding: 60px;
+}
+
+.text-container{
+position: absolute;
+max-height: 80%;
+overflow: auto;
+}
+
+.text-area{
+
+}
+
+.mine:hover,
+.hers:hover {
+  transform: scale(1.2);
+  
+}
+
+.mine,
+.hers {
+  position: relative;
+  min-width: 500px;
+  max-height: 500px;
+  margin: 5px;
+  overflow: auto;
+  transition: transform 600ms ease-in-out;
+}
+
+.mine {
+  border: 5px solid blue;
+  background-color: rgba(19, 19, 219, 0.253);
+}
+
+.hers {
+  border: 5px solid yellow;
+  background-color: rgba(255, 255, 0, 0.237);
+}
+
+.pic1{
+
+  margin-left: 20px; 
+  transform: rotate(335deg);
+}
